@@ -1,54 +1,93 @@
 header {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 
 }
 
 
 h2 {
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: center;
+  width: 33%;
 
 }
 
 .nav {
-
-
-  }
-
-  li {
-
-
-  }
-
-  .content{
-
+  display:flex;
+  flex-direction: row;
 }
 
-  .aside {
+li {
+  list-style-type: none;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: center;
+  width: 20%;
+  margin-right: 3px;
+}
 
-  }
+.content{
+  display: flex;
+  flex-direction: row;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: center;
+}
 
-  .slidebox{
+.aside {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: center;
+}
 
-   
-  }
+.slidebox{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-right: 130px;
+  width: 98%;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: center;
+}
 
-  .article{
-
-  }
+.article{
+  display: flex;
+  flex-direction: row;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: center;
+}
 
 
 .poem{
-
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  text-align: center;
 }
 
 
 /*Device = Tablets, Ipads (portrait)
   Screen = B/w 600px to 990px*/
-  @media (min-width:600px) and (max-width: 990px)  {
-    .article {
-
-  } 
+@media (min-width:600px) and (max-width: 990px)  {
+  .article {
+    display: flex;
+    flex-direction: column;
+  }
 header{
-
+  display: none;
 }
 }
 
@@ -56,21 +95,22 @@ header{
 @media (max-width:599px) {
 
 header,.content{
-
+  display: none;
 }
 
 .nav {
-
-
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
 
 .nav > li {
-
+  list-style-type: none;
+  margin-right: 10%;
+  margin-top: 20%;
+  margin-bottom: 10%;
 }
 
 
 }
-
-
-  

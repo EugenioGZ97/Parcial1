@@ -15,19 +15,39 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 */
 
 // CREA TU FUNCION mayusculas aqui:
-
+function F1(arr) {
+  for(var i = 0; i < arr.length; i++) {
+    console.log(arr[i].toUpperCase());
+  }
+}
 
 
 /*
-### F2 Crea una funcion llamada numVocales que reciba como parámetro un arreglo y cuente el numero de vocales de cada elemento y escriba en consola "datos: tiene [x] vocales , para cada elemento del arreglo" 
+### F2 Crea una funcion llamada numVocales que reciba como parámetro un arreglo y cuente el numero de vocales de cada elemento y escriba en consola "datos: tiene [x] vocales , para cada elemento del arreglo"
 */
 
 // CREA TU FUNCION numVocales aqui:
-
+function F2(nombre) {
+  var minusculas = nombre.toLowerCase();
+  var counter = 0;
+  for(var i=0; i<minusculas.length; i++) {
+    if(minusculas[i]=='a' || minusculas[i]=='e' || minusculas[i]=='i' || minusculas[i]=='o' || minusculas[i]=='u') {
+       counter=counter+1;
+    }
+  }
+  return counter;
+}
 
 /*
-### F3 Crea una funcion llamada numVocalesArr que reciba un arreglo y mande llamar a la funcion numVocales para que escriba la longitud de cada elemento del arreglo." 
+### F3 Crea una funcion llamada numVocalesArr que reciba un arreglo y mande llamar a la funcion numVocales para que escriba la longitud de cada elemento del arreglo."
 */
+function F3(arr) {
+  var vocales;
+  for(var i = 0; i < arr.length; i++) {
+    vocales = F2(arr[i]);
+    console.log("El nombre " + nombres[i] + " tiene " + vocales + " vocales y " + arr[i].length + " letras");
+  }
+}
 
 // CREA TU FUNCION numVocalesArr aqui:
 
@@ -35,7 +55,7 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 
 
 
-/* 
+/*
 ################ OBJETOS ###############
 
 A) Define un objeto tipo "Perro" que reciba 3 parametros
@@ -45,14 +65,15 @@ A) Define un objeto tipo "Perro" que reciba 3 parametros
 3) Raza
 
 
+
 B) Crea 3 objectos  con diferentes valores
 
-C) Con un console.log escribe el nombre del primer objeto, el color del segundo, y la raza del tercero. Lo puedes hacer en una sola línea o en 3 lineas aparte. 
+C) Con un console.log escribe el nombre del primer objeto, el color del segundo, y la raza del tercero. Lo puedes hacer en una sola línea o en 3 lineas aparte.
 
 
 *****BONUS****
 
-Crea una método en la definición del objeto "Perro" llamado printInfo()  que escriba en consola todas las propiedades del objeto que lo invoca. 
+Crea una método en la definición del objeto "Perro" llamado printInfo()  que escriba en consola todas las propiedades del objeto que lo invoca.
 
 EJ
 
@@ -64,30 +85,50 @@ Deberia escribir en consola
 
 
 */
+function Perro(Nombre, Color, Raza) {
+  this.Nombre = Nombre;
+  this.Color = Color;
+  this.Raza = Raza;
+  this.printInfo = printInfo;
+}
 
+function printInfo() {
+  console.log("Nombre: " + this.Nombre + " , De color: " + this.Color + " , Raza: " + this.Raza);
+}
 
+var Perro1 = new Perro('Uno', 'Cafe', 'Salchicha');
+var Perro2 = new Perro('Dos', 'Negro', 'Labrador');
+var Perro3 = new Perro('Tres', 'Gris', 'Huskey');
+
+console.clear();
+console.log("Nombre Perro1: " + Perro1.Nombre);
+console.log("Color Perro2: " + Perro2.Color);
+console.log("Raza Perro3: " + Perro3.Raza);
+
+Perro1.printInfo();
 
 /***
- * 
+ *
  *        PRUEBA TUS FUNCIONES
- * 
+ *
  ***/
 
 // F1
-
+F1(nombres);
 
 // F2
-
+var vocales = F2(nombres[1]);
+console.log("El nombre " + nombres[1] + " tiene " + vocales + " vocales");
 
 // F3
-
+F3(nombres);
 
 
 
 /***
- * 
+ *
  *        PRUEBA TUS OBJETOS
- * 
+ *
  ***/
 
 
